@@ -67,26 +67,21 @@ if(!$heroes)
     <title>Document</title>
     <link rel="stylesheet" href="../public/assets/style.css">
 </head>
-<body>
+<body id="bodyChoixHro">
 <h1>Choisis ton personnage, <?= $_SESSION['user']->getPseudo() ?> !</h1>
     <?php 
     /**
      * @var Hero $hero
      */
-    foreach($heroes as $hero):  ?>
-
+    foreach($heroes as $hero): ?>
         <form action="../process/process-heroChoice.php" method="POST">
             <input type="hidden" name="hero_id" value="<?= htmlspecialchars($hero->getId()) ?>">
-            <input type="submit" value="<?= htmlspecialchars($hero->getPseudo()) ?>">
+            <img src="<?= htmlspecialchars($hero->getSkinPath()) ?>" alt="<?= htmlspecialchars($hero->getPseudo()) ?>" width="5px" height="20px">
+            <br>
+            <input type="submit" value="<?= htmlspecialchars($hero->getPseudo()) ?>" id="boutonChoixHero">
         </form>
-        
-    <?php endforeach  ?>
+    <?php endforeach; ?>
 
-    <p>
-        <img src="./assets/guts2.png" alt="">
-    </p>
-    <p>
-        <img src="./assets/Ulquirra2.png" alt="">
-    </p>
+ 
 </body>
 </html>
