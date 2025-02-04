@@ -64,24 +64,22 @@ if(!$heroes)
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Choisis ton personnage</title>
     <link rel="stylesheet" href="../public/assets/style.css">
 </head>
-<body id="bodyChoixHro">
-<h1>Choisis ton personnage, <?= $_SESSION['user']->getPseudo() ?> !</h1>
-    <?php 
-    /**
-     * @var Hero $hero
-     */
-    foreach($heroes as $hero): ?>
-        <form action="../process/process-heroChoice.php" method="POST">
+<body id="bodyChoixHero">
+
+<h1>Choisis ton personnage, <?= htmlspecialchars($_SESSION['user']->getPseudo()) ?> !</h1>
+
+<div class="heroes-grid">
+    <?php foreach ($heroes as $hero): ?>
+        <form action="../process/process-heroChoice.php" method="POST" class="hero-card">
             <input type="hidden" name="hero_id" value="<?= htmlspecialchars($hero->getId()) ?>">
-            <img src="<?= htmlspecialchars($hero->getSkinPath()) ?>" alt="<?= htmlspecialchars($hero->getPseudo()) ?>" width="5px" height="20px">
-            <br>
-            <input type="submit" value="<?= htmlspecialchars($hero->getPseudo()) ?>" id="boutonChoixHero">
+            <img src="<?= htmlspecialchars($hero->getSkinPath()) ?>" alt="<?= htmlspecialchars($hero->getPseudo()) ?>" class="hero-image">
+            <input type="submit" value="<?= htmlspecialchars($hero->getPseudo()) ?>" class="hero-button">
         </form>
     <?php endforeach; ?>
+</div>
 
- 
 </body>
 </html>
