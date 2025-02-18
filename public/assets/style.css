@@ -27,13 +27,6 @@ style.css */
   }
 
   
-  
-  /* label {
-    font-size: 14px;
-    margin-bottom: 5px;
-    display: inline-block;
-  }
-   */
   input {
     width: 92%;
     padding: 10px;
@@ -62,7 +55,7 @@ style.css */
   }
   
 #boutonValide:hover {
-    background: #3b3b98;
+    background: #e19325;
   }
   
   #boutonValide:active {
@@ -118,7 +111,7 @@ h1 {
 .hero-card:hover {
   transform: scale(1.05);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-  border: 2px solid #ff4500;
+  border: 2px solid #ffffff;
 }
 
 /* Image du héros */
@@ -127,13 +120,13 @@ h1 {
   height: 300px;
   object-fit: cover;
   border-radius: 10px;
-  border: 2px solid #ff4500;
+  border: 2px solid #ffffff;
 }
 
 /* Bouton de sélection */
 .hero-button {
   margin-top: 10px;
-  background-color: #ff4500;
+  background-color: #ffffff;
   color: white;
   border: none;
   padding: 10px;
@@ -146,201 +139,141 @@ h1 {
 }
 
 .hero-button:hover {
-  background-color: #ff6347;
+  background-color: #ffffff;
   transform: scale(1.05);
 }
 
+/* 
+page fight */
 
 
 
+/* Importer une police style arcade */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
-
-
-
-
-
-  /* page heroChoice */
-
-  /* style.css */
-/* * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Arial', sans-serif;
+/* 🌌 Fond général du combat */
+#bodyFight {
+    font-family: 'Press Start 2P', cursive;
+    background: url('../assets/decors.gif') no-repeat center center/cover;
+    color: white;
+    text-align: center;
+    overflow: hidden;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
 }
 
-body {
-  background-image: url(./decors.gif);
-  background-size:  100vw 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  color: whitesmoke;
-} */
-
-/* .container {
-  text-align: center;
-  background-color: #7f5539;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-}
-
-h1 {
-  font-size: 2em;
-  margin-bottom: 20px;
-  color: whitesmoke;
-}
-
-.character-selection {
-  display: flex;
-  justify-content: space-around;
-  margin-top: 30px;
-}
-
-.character-card {
-  background-color: #e6ccb2;
-  border-radius: 10px;
-  width: 200px;
-  padding: 20px;
-  text-align: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-}
-
-.character-card img {
-  width: 100%;
-  border-radius: 10px;
-  margin-bottom: 15px;
-}
-
-.character-card:hover {
-  transform: translateY(-10px);
-}
-
-h2 {
-  font-size: 1.5em;
-  margin-bottom: 10px;
-  color: whitesmoke;
-}
-
-.choose-button {
-  padding: 10px 20px;
-  font-size: 1em;
-  background-color: #7f5539;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.choose-button:hover {
-  background-color: #2980b9;
-} */
-
-/* page fight  */
-
-/* combat.css */
-/* combat.css */
-/* * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Arial', sans-serif;
-}
-
-body {
-  background-color: #f0f0f0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  color: #333;
-}
-
+/* 📺 Conteneur principal */
 .combat-container {
-  background-color: #fff;
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  width: 600px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
 }
 
-h1 {
-  font-size: 2em;
-  margin-bottom: 20px;
-  color: #2c3e50;
-}
 
+
+/* 🎮 Zone de combat */
 .fighters {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    position: absolute;
+    bottom: 20%;
 }
 
+/* 👊 Style des personnages */
 .fighter {
-  background-color: #ecf0f1;
-  border-radius: 10px;
-  padding: 20px;
-  width: 45%;
-  text-align: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+    position: relative;
+}
+
+/* ✅ Rendre les noms et HP visibles */
+.fighter h2, .fighter p {
+    position: absolute;
+    top: -60px; /* Remonter au-dessus du perso */
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.7); /* Fond sombre pour contraste */
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: white;
+    font-size: 14px;
+    width: max-content;
+}
+
+/* ✅ Espacement entre les stats */
+.fighter p {
+    top: -30px; /* Descendre légèrement les HP */
 }
 
 .fighter img {
-  width: 100px;
-  height: 100px;
-  /* border-radius: 50%; */
-  /* margin-bottom: 15px;
+    width: 300px;
+    height: auto;
+    image-rendering: pixelated;
 }
 
-.attack-button {
-  padding: 10px 20px;
-  font-size: 1em;
-  background-color: #3498db;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.attack-button:hover {
-  background-color: #2980b9;
-}
-
+/* 🆚 Style du "VS" */
 .vs-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 2em;
-  color: #e74c3c;
+    font-size: 4em;
+    font-weight: bold;
+    color: #2b4162;
+    text-shadow: 3px 3px 10px rgba(251, 251, 251, 0.8);
+    animation: blinkVs 0.8s infinite alternate;
 }
 
-.special-attack {
-  margin-top: 20px;
+/* Effet clignotant sur "VS" */
+@keyframes blinkVs {
+    0% { opacity: 1; }
+    100% { opacity: 0.5; }
 }
 
-.special-attack button {
-  padding: 15px 30px;
-  font-size: 1.2em;
-  background-color: #e74c3c;
-  color: white;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: background-color 0.3s;
+/* 🔴 Bouton Attaquer */
+.formFight {
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
 }
 
-.special-attack button:hover {
-  background-color: #c0392b;
+
+
+input[type="submit"] {
+    background-color: #2b4162;
+    border: none;
+    padding: 20px 40px;
+    font-size: 1.5em;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out, transform 0.1s;
+    border-radius: 10px;
+    font-family: 'Press Start 2P', cursive;
+    color: white;
 }
 
-#result-message {
-  font-size: 1.5em;
-  margin-top: 20px;
-  color: #e74c3c;
-} */ 
+input[type="submit"]:hover {
+    background-color: rgb(255, 255, 255);
+    color: black;
+    transform: scale(1.1);
+}
+
+/* 🎭 Animation de secousse quand un coup est donné */
+@keyframes shake {
+    0% { transform: translate(0, 0); }
+    25% { transform: translate(-5px, 0); }
+    50% { transform: translate(5px, 0); }
+    75% { transform: translate(-5px, 0); }
+    100% { transform: translate(0, 0); }
+}
+
+.fighter.hit {
+    animation: shake 0.2s ease-in-out;
+}
+
+

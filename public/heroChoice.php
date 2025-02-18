@@ -66,6 +66,7 @@ if(!$heroes)
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Choisis ton personnage</title>
     <link rel="stylesheet" href="../public/assets/style.css">
+
 </head>
 <body id="bodyChoixHero">
 

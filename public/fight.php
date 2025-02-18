@@ -5,6 +5,7 @@ include_once '../utils/autoloader.php';
 
 session_start();
 
+
 /**
  * @var Monster $monster
  */
@@ -29,8 +30,10 @@ $user = $_SESSION['user'];
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./assets/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
 </head>
-<body>
+<body id="bodyFight">
 <div class="combat-container">
         <h1>Combat entre les héros</h1>
 
@@ -38,9 +41,9 @@ $user = $_SESSION['user'];
             <!-- Personnage Utilisé -->
             <div class="fighter" id="fighter1">
                 <h2><?= $user->getChosenHero()->getPseudo() ?></h2>
-                <img src="./assets/Coybow2.png" alt="Ton Personnage">
+                <img src="<?= $user->getChosenHero()->getSkinPath() ?>" alt="Ton Personnage">
                 <p>HP: <span id="hp1"><?= $user->getChosenHero()->getHp() ?></span></p>
-                <p>ATTACK: <span id="hp1"><?= $user->getChosenHero()->getAttack() ?></span></p>
+               
                 
             </div>
 
@@ -52,14 +55,16 @@ $user = $_SESSION['user'];
             <!-- Adversaire -->
             <div class="fighter" id="fighter2">
                 <h2><?= $monster->getPseudo() ?></h2>
-                <img src="./assets/alien.png" alt="Adversaire">
+                <img src="./assets/kenpachi.png" alt="Adversaire">
                 <p>HP: <span id="hp2"><?= $monster->getHp() ?> </span></p>
-                <p>HP: <span id="hp2"><?= $monster->getAttack() ?> </span></p>
+                
             </div>
-            <form action="../process/process-fight.php" method="post">
+           
+        </div>
+
+        <form action="../process/process-fight.php" method="post" class="formFight">
                 <input type="submit" value="Attaquer">
             </form>
-        </div>
 
 
 </body>
