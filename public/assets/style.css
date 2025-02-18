@@ -325,3 +325,8 @@ input[type="submit"]:hover {
   background: darkred;
   transform: scale(1.1);
 }
+
+
+#h1Time{
+  font-size: 50px;
+}

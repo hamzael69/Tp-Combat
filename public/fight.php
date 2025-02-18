@@ -35,7 +35,7 @@ $user = $_SESSION['user'];
 </head>
 <body id="bodyFight">
 <div class="combat-container">
-        <h1>∞</h1>
+        <h1 id="h1Time">∞</h1>
 
         <?php if (isset($_SESSION['fight_result'])): ?>
     <div class="fight-result <?php echo $_SESSION['fight_result']; ?>">
