@@ -277,3 +277,51 @@ input[type="submit"]:hover {
 }
 
 
+/* test */
+
+
+.fight-result {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  font-size: 2em;
+  padding: 20px;
+  border-radius: 10px;
+  font-family: 'Press Start 2P', cursive;
+  z-index: 9999; 
+}
+
+.fight-result.win {
+  color: green;
+  background: rgba(0, 255, 0, 0.8);
+  border: 3px solid darkgreen;
+}
+
+.fight-result.lose {
+  color: red;
+  background: rgba(255, 0, 0, 0.8);
+  border: 3px solid darkred;
+}
+
+
+
+.btn-home {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 1.2em;
+  text-decoration: none;
+  color: white;
+  background: black;
+  border-radius: 5px;
+  border: 2px solid darkred;
+  transition: 0.3s ease-in-out;
+  z-index: 10000;
+}
+
+.btn-home:hover {
+  background: darkred;
+  transform: scale(1.1);
+}

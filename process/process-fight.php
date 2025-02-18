@@ -29,5 +29,12 @@ $heroRepository->updateHp($user->getChosenHero()->getId(), $user->getChosenHero(
 //     $heroRepository->killHero($hero->getId());
 // }
 
+// Vérifier qui a gagné et stocker le résultat dans la session
+if ($user->getChosenHero()->getHp() <= 0) {
+    $_SESSION['fight_result'] = "lose";
+} elseif ($monster->getHp() <= 0) {
+    $_SESSION['fight_result'] = "win";
+}
+
 
 header('Location: ../public/fight.php');

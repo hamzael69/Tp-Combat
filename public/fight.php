@@ -35,7 +35,19 @@ $user = $_SESSION['user'];
 </head>
 <body id="bodyFight">
 <div class="combat-container">
-        <h1>Combat entre les héros</h1>
+        <h1>∞</h1>
+
+        <?php if (isset($_SESSION['fight_result'])): ?>
+    <div class="fight-result <?php echo $_SESSION['fight_result']; ?>">
+        <?php if ($_SESSION['fight_result'] === "win"): ?>
+            <h2> You Win! </h2>
+        <?php else: ?>
+            <h2> You Lose! </h2>
+        <?php endif; ?>
+        <a href="../public/home.php" class="btn-home">Retour à l'accueil</a>
+    </div>
+    <?php unset($_SESSION['fight_result']); // Supprimer le message après l'affichage ?>
+<?php endif; ?>
 
         <div class="fighters">
             <!-- Personnage Utilisé -->
@@ -54,7 +66,7 @@ $user = $_SESSION['user'];
 
             <!-- Adversaire -->
             <div class="fighter" id="fighter2">
-                <h2><?= $monster->getPseudo() ?></h2>
+                <h2>Kenpachi</h2>
                 <img src="./assets/kenpachi.png" alt="Adversaire">
                 <p>HP: <span id="hp2"><?= $monster->getHp() ?> </span></p>
                 
